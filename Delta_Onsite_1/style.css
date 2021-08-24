@@ -1,0 +1,84 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1571974599782-87624638275e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piano {
+  display: flex;
+  position: relative;
+  margin-left: 4px;
+}
+
+.white {
+  text-align: 90%;
+  font-size: 40px;
+  font-weight: bold;
+  width: 125px;
+  height: 370px;
+  background-color: rgb(241, 238, 226);
+  border: 4px solid black;
+  border-radius: 0 0 6px 6px;
+  margin-left: -4px;
+  cursor: pointer;
+}
+
+.white.active {
+  background-color: #C0C0C0;
+}
+
+.black {
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFF;
+  position: absolute;
+  width: 66px;
+  height: 190px;
+  background-image: linear-gradient(#000000, #303030);
+  border: 3px solid black;
+  border-radius: 0 0 30px 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.black.active {
+  background-image: linear-gradient(#000000, #101010);
+}
+
+.Db4-key {
+  left: 7%;
+}
+
+.Eb4-key {
+  left: 17%;
+}
+
+.Gb4-key {
+  left: 37%;
+}
+
+.Ab4-key {
+  left: 47%;
+}
+
+.Bb4-key {
+  left: 57%;
+}
+
+.Db5-key {
+  left: 77%;
+}
+
+.Eb5-key {
+  left: 87%;
+}
