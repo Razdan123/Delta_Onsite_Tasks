@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+    .container {
+	border-radius: 20px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: absolute;
+    left: 50%;
+    border: 5px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+	overflow: hidden;
+	width: 850px;
+	max-width: 100%;
+	min-height: 480px;
+}
+body{
+    background-image: url("https://cdn.pixabay.com/photo/2019/03/03/14/38/hacker-4031973_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family:monospace;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container" id="container" style="border: solid rgb(255, 0, 0) 4px; background-color:aliceblue;">
+        <h1 style="text-align: center;">URL Compressor</h1>
+        <form action="/newurls" method="POST" class="my-4 form-inline">
+          <label for="fullUrl" class="sr-only">Url</label>
+          <input required placeholder="Enter Your Url" type="url" name="longurl" id="fullUrl" class="form-control col mr-2">
+          <button class="btn btn-success" type="submit" style="background-color: rgb(255, 0, 43);">Shrink</button>
+        </form>
+
+        <div id="output"></div>
+                
+        <table class="table table-striped table-responsive">
+          <thead>
+            <tr>
+              <th>Long URL</th>
+              <th>Short URL</th>
+              <th>No. Of Clicks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% urls.forEach(url => { %>
+                <tr>
+                  <td ><a href="<%= url.longurl %>" target="_blank"><%= url.longurl  %></a></td>
+                  <td><a onclick="getLocation();" href="<%= url.shorturl %>" target="_blank"><%= url.shorturl %></a></td>
+                  <td style="text-align: center;"><%= url.clicks %></td>
+                </tr>
+              <% }) %>
+        </tbody>
+        </table>
+    <script>
+var x = document.getElementById('output');
+function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }else{
+        x.innerHTML = "Browser not supporting"
+    }
+}
+
+function showPosition(position){
+    x.innerHTML = "latitude = "+position.coords.latitude;
+    x.innerHTML += "Longitude = "+position.coords.longitude;
+
+    var locAPI = "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude +","+ position.coords.longitude +"&sensor=true";
+   // x.innerHTML = locAPI;
+}
+
+
+    </script>
+  </body>
+</html>

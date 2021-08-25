@@ -3,7 +3,6 @@
     background: black;
   }
   h1{
-      position: relative;
       font-family: cursive;
       font-size: 50px;
   }
@@ -45,7 +44,7 @@
     text-decoration: none;
     display: inline-block;
     position: relative;
-    left: 20%;
+    left: 10%;
     top: 30vh;
     font-size: 16px;
     cursor: pointer;
@@ -68,7 +67,7 @@
     text-decoration: none;
     display: inline-block;
     position: relative;
-    left: 70%;
+    left: 75%;
     top: 30vh;
     font-size: 16px;
     font-weight: 700;
