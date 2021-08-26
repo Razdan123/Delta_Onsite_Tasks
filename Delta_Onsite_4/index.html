@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="timer" id="timer">00:00</div>
+    <button id="btn" onclick="window.location.reload();">Get New</button>
+    <div class="container" id="container" style="border: solid rgb(0, 116, 48) 4px;">
+        <h1 style="text-align: center;">Typing-Speed</h1>
+        <h5 style="text-align: center; color: red;"><span id="show"></span> words completed in <span id="timetaken">00:00</span> of time</h5>
+        <div class="content-display" id="contentDisplay"></div>
+        <textarea  id="contentInput" class="content-input" autofocus></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
